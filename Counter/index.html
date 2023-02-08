@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        :root{
+            --silver: #d7dfe4;
+            --bg-color: #2c3e50;
+        }
+
+        *{
+            margin: 0; padding: 0;
+        }
+        body{
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+        }
+        #container{
+            color: var(--silver);
+            text-align: center;
+        }
+        h1{
+            font-size: 50px;
+            font-weight: bold;
+        }
+        #counter{
+            font-size: 150px;
+            font-weight: bold;
+        }
+        .btn{
+            cursor: pointer;
+            padding: 3px 8px;
+            font-size: 25px;
+            margin: 0 10px;
+            color:  var(--silver);
+            background-color: var(--bg-color);
+            border: 2px solid var(--silver);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            color: var(--bg-color);
+            background-color: var(--silver);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Counter</h1>
+        <p id="counter">0</p><br>
+        <button class="btn" id="dec">DECREASE</button>
+        <button class="btn" id="reset">RESET</button>
+        <button class="btn" id="inc">INCREASE</button>
+    </div>
+
+    <script>
+        var dec = document.getElementById("dec");
+        var reset = document.getElementById("reset");
+        var inc = document.getElementById("inc");
+        var counter = document.getElementById("counter");
+        var count = 0;
+
+        dec.addEventListener("click", function(){
+            count--;
+            counter.innerText = count;
+            if(count==0){counter.style.color = "#d7dfe4";}
+            else if(count<0){
+                counter.style.color = "red";
+            }
+            
+        });
+        inc.addEventListener("click", function(){
+            count++;
+            counter.innerText = count;
+            if(count==0){counter.style.color = "#d7dfe4";}
+            else if(count>0){
+                counter.style.color = "green";
+            }
+        });
+        reset.addEventListener("click", function(){
+            count=0;
+            counter.innerText = count;
+            counter.style.color = "#d7dfe4";
+        });
+    </script>
+</body>
+</html>

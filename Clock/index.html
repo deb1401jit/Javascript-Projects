@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #7690a6;
+            color: #d7dfe4;
+        }
+
+        .container {
+            background-color: rgb(44, 62, 80);
+            padding: 20px 30px;
+            text-align: center;
+            border: 5px solid #d7dfe4;
+            border-radius: 25px;
+            box-shadow: 10px 10px 50px 3px rgba(44, 62, 80, 0.65);
+        }
+
+        #clock {
+            font-size: 150px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CLOCK</h1>
+        <span id="clock">00:00:00</span>
+    </div>
+
+    <script>
+        setInterval("clock()", 995);  //to reduce ui delay
+        function clock() {
+            var date = new Date();
+            var hr = date.getHours();
+            var min = date.getMinutes();
+            var sec = date.getSeconds();
+            var timezone = " AM";
+            if (hr > 12) {
+                hr -= 12;
+                hr = "0" + hr;
+                timezone = " PM";
+            }
+            if (min < 10) {
+                min = "0" + min;
+            }
+            if (sec < 10) {
+                sec = "0" + sec;
+            }
+            var time = hr + ":" + min + ":" + sec;
+            document.getElementById("clock").innerText = time + timezone;
+        }
+    </script>
+</body>
+
+</html>
