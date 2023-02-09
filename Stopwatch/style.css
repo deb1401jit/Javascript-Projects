@@ -1,0 +1,53 @@
+:root{
+    --silver: #d7dfe4;
+    --bg-color: #2c3e50;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--bg-color);
+    display: flex;
+     
+    /* to center the items in div */
+    justify-content: center;    /* horizontal */
+    align-items: center;        /* vertical */
+    height: 100vh;
+}
+
+#container{
+    color: var(--silver);
+}
+.digit{
+    font-size: 150px;
+    font-weight: bold;
+}
+.txt{
+    font-size: 40px;
+    font-weight: bold;
+}
+#btn-container{
+    text-align: center;
+    margin-top: 35px;
+}
+.btn{
+    padding: 7px 25px;
+    font-size: 18px;
+    margin: 0 10px;
+    color: var(--silver);
+    border: none;
+    cursor:  pointer;
+    border-radius: 25px;
+}
+#start{
+    background-color: #1abc9c;
+}
+#stop{
+    background-color: #3498db;
+}
+#reset{
+    background-color: #e74c3c;
+}

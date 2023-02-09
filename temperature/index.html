@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+    <style>
+        body{
+            padding: 50px 100px;
+        }
+        h1{
+            text-align: center;
+        }
+        #container{
+            text-align: center;
+            background-color: #1abcb9;
+            padding: 50px;
+        }
+        .input-container{
+            display: inline-block; 
+        }
+        .input{
+            padding: 5px 10px;
+            margin: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+        label{
+            font-size: 23px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <div id="container">
+        <div class="input-container">
+            <label for="cel">Celcius</label><br>
+            <input type="number" value="0" id="cel" class="input">
+        </div>
+        <div class="input-container">
+            <label for="fah">Fahrenheit</label><br>
+            <input type="number" value="32" id="fah" class="input">
+        </div>
+    </div>
+    
+    <script>
+        var cel= document.getElementById("cel");
+        var fah= document.getElementById("fah");
+
+        cel.addEventListener('input',function(){
+            let c = this.value;
+            let f = (c * 9/5) + 32;
+            fah.value=f;
+        });
+
+        fah.addEventListener('input',function(){
+            let f = this.value;
+            let c = (f - 32) * 5/9;
+            //limiting the number of digits after decimal point
+            if(!Number.isInteger(c)){
+                c=c.toFixed(4);
+            }
+            cel.value=c;
+        });
+
+    </script>
+</body>
+</html>
