@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 20px 100px;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        p{
+            font-size: 20px;
+            text-align: justify;
+        }
+
+        #color-switcher{
+            text-align: right;
+        }
+        .btn{
+            width: 25px;
+            height: 25px;
+            display: inline-block;  /* since span is inline by default. so it wont take height/width  */
+            border: 2px solid grey;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #white{
+            background-color: #ffffff;
+        }
+        #aqua{
+            background-color: #00ffff;
+        }
+        #violet{
+            background-color: #ee82ee;
+        }
+        #black{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="color-switcher">
+        <span class="btn" id="white" onclick="changeBG('#ffffff')"></span>
+        <span class="btn" id="aqua" onclick="changeBG('#00ffff')"></span>
+        <span class="btn" id="violet" onclick="changeBG('#ee82ee')"></span>
+        <span class="btn" id="black" onclick="changeBG('#000000')"></span>
+    </div>
+    <h1 class="text">About Us</h1>
+    <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat libero laboriosam suscipit, excepturi maxime repellat molestias architecto, ullam eius, tempora voluptatem itaque beatae doloribus quam dignissimos eum quidem? Rem consequatur ea perferendis, earum, vitae dicta qui molestias, id mollitia quas itaque velit ex tenetur esse vel ad dignissimos porro. Quo odit architecto, aspernatur ducimus nemo a porro consequuntur laborum perferendis quod fugit voluptas est, illo sapiente aut explicabo deleniti temporibus unde labore similique at delectus dolores quaerat natus! Sapiente eos tenetur consequuntur qui dolores exercitationem dolorum totam sint ut suscipit sunt, nesciunt beatae odit tempore fugit quas voluptas! Numquam quae eveniet non laboriosam at dolores consectetur tempora dolorem magnam molestias assumenda ea repudiandae officiis consequuntur quisquam suscipit ullam facilis porro quia fugit minima voluptates, soluta nihil? Perferendis eveniet facere similique maxime ipsum fuga quos mollitia minima vitae est odio placeat et recusandae architecto autem, repellat sint animi culpa praesentium. Ipsam dolore modi maiores ex, odio expedita eaque iste vitae iusto quae voluptate! Culpa, dolor aliquam laboriosam minima commodi hic sapiente voluptates sed, rerum accusamus magnam? Pariatur amet iure a officiis fuga repellendus doloribus laboriosam. Aut voluptatibus quis dicta similique fuga, corporis perspiciatis dolores obcaecati tempora rerum, architecto, minima neque ut.
+    </p>
+
+
+    <script>
+        function changeBG(color){
+            document.body.style.backgroundColor = color;
+            let txt = document.getElementsByClassName("text");
+            if(color == "#000000"){
+                for(let elm of txt){
+                    elm.style.color = "white";
+                }
+            }else{
+                for(let elm of txt){
+                    elm.style.color = "black";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

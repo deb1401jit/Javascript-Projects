@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body{
+            background-color: cadetblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        #form-container{
+            text-align: center;
+            background-color: whitesmoke;
+            padding: 50px;
+        }
+        h1{
+            margin: 0 0 10px 0;
+        }
+        input{
+            font-size: 15px;
+            width: 210px;
+            margin: 15px 0 0 0;
+            padding: 10px;
+        }
+        input[type="submit"]{
+            width: 235px;
+            margin: 25px 0 0 0;
+            color: whitesmoke;
+            background-color: cadetblue;
+            border: none;
+            font-weight: bold;
+            transition: 0.25s;
+        }
+        input[type="submit"]:hover{
+            background-color: rgb(53, 130, 133);
+            transition-timing-function: linear;
+        }
+        .error{
+            margin: 0;
+            padding: 0;
+            color: red;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="form-container">
+        <h1>Login</h1>
+        <form action="" onsubmit="return validateForm()">
+            <input type="text" placeholder="Username" id="username"><br>
+            <p id="userError" class="error"></p>
+            <input type="password" placeholder="Password" id="password"><br>
+            <p id="passwordError" class="error"></p>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        let username=document.getElementById("username");
+        let password=document.getElementById("password");
+        let flag = false;
+
+        function validateForm(){
+            if(username.value==""){
+                document.getElementById("userError").innerText = "* Username is empty";
+                flag=true;
+            }else if(username.value.length<=4){
+                document.getElementById("userError").innerText = "* Require minimum 4 character";
+                flag=true;
+            }else{
+                document.getElementById("userError").innerText = "";
+                flag=false;
+            }
+
+            if(password.value==""){
+                document.getElementById("passwordError").innerText = "* Password is empty";
+                flag=true;
+            }else if(password.value.length<=4){
+                document.getElementById("passwordError").innerText = "* Require minimum 8 character";
+                flag=true;
+            }else{
+                document.getElementById("passwordError").innerText = "";
+                flag=false;
+            }
+            
+            if(flag){
+                return false;
+            }else{
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

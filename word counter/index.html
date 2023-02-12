@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <style>
+        body{
+            align-items: center;
+            padding: 50px 100px;
+            background-color: rgb(255, 248, 239);
+        }
+        #container{
+            /* to center the div */
+            margin: auto;
+        }
+        h1{
+            text-align: center;
+            background-color: rgb(79, 200, 224);
+            color: rgb(255, 248, 239);
+            padding: 10px;
+            margin: 0;
+        }
+        #textbox{ 
+            width: 99.4%;
+            border: 2px solid rgb(79, 200, 224);
+            margin-top: 25px;
+            font-size: 20px;
+
+            /* extra for learning */
+            resize: none;
+            outline: none;
+        }
+        p{
+            margin: 10px 0 0 0;
+            padding: 10px;
+            text-align: center;
+            background-color: rgb(79, 200, 224);
+            font-size: 26px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Word and Character Counter</h1>
+        <textarea id="textbox" cols="30" rows="10" placeholder="Enter text..."></textarea>
+        <p>
+            <span id="word">0</span> words and 
+            <span id="char">0</span> characters
+        </p>
+    </div>
+    
+    <script>
+        // var vs let= https://sentry.io/answers/difference-between-let-and-var-in-javascript/
+
+        var textbox = document.getElementById("textbox");
+
+        textbox.addEventListener('input', function(){
+            var text = this.value;
+            let char = text.length;
+            document.getElementById("char").innerHTML = char;
+
+            text=text.trim(); //remove empty spaces before and after the sentence
+            let words = text.split(" ");
+            //remove empty spaces between words
+            let cleanList = words.filter(function(elm){//elm represents the words being passed through the func
+                return elm != "";
+            });
+            document.getElementById("word").innerHTML = cleanList.length;
+        });
+    </script>
+</body>
+</html>
