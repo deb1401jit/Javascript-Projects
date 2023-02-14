@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+input{
+    font-size: 30px;
+    margin: 2px 0;
+    padding: 5px 10px;
+    width: 304px;
+    height: 45px;
+    background-color: #202c38;
+    color: whitesmoke ;
+    border: none;
+    text-align: right;
+}
+.btn{
+    cursor: pointer;
+    font-size: 35px;
+    padding: 5px 10px;
+    margin: 2px 0;;
+    border: none;
+    width: 78px;
+    transition: 0.3s;
+    background-color: rgb(239, 238, 238);
+}
+.btn:hover{
+    background-color: rgb(215, 215, 215);
+}
+
+.operators .btn{
+    background-color: #b9b9b9;
+}
+.operators .btn:hover{
+    background-color: #a3a3a3;
+}
+#container{
+    position: relative;
+    padding: 10px;
+    border: 2px solid #202c38;
+}
+
+#side-btn{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 10px;
+    top: 126px;
+}
+#c-btn{
+    height: 52px
+}
+#eql-btn{
+    height: 165px;
+    background-color: rgb(255, 133, 89);
+}
+#eql-btn:hover{
+    background-color: rgb(255, 99, 43);
+}
