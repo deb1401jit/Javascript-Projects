@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Budget Application</title>
+        <script src="https://code.iconify.design/iconify-icon/1.0.4/iconify-icon.min.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1 id="heading">Budget App</h1>
+        <div id="box">
+            <div id="container-1">
+                <form action="">
+                    <div class="input" id="inp1">
+                        <label for="budget-inp">Enter Budget:</label>
+                        <input type="text" id="budget-inp" required autocomplete="off">
+                        <button id="budget-btn">Calculate</button>
+                    </div>
+                </form>
+                
+                <form action="">
+                    <div class="input" id="inp2">
+                        <label for="expense-name-inp">Expense Name:</label>
+                        <input type="text" id="expense-name-inp" required autocomplete="off">
+                        <label for="expense-amt-inp">Expense amount:</label>
+                        <input type="text" id="expense-amt-inp" required autocomplete="off">
+                        <button id="expense-btn">Add Expense</button>
+                    </div>
+                </form>
+            </div>
+            <div id="container-2">
+                <div id="container-2-1">
+                    <div class="align" id="budget">
+                        <span class="title">Budget</span>
+                        <iconify-icon icon="ph:wallet-light" width="60"></iconify-icon>
+                        <span class="amount" id="budget-amt">$0</span>
+                    </div>
+                    <div class="align" id="expense">
+                        <span class="title">Expenses</span>
+                        <iconify-icon icon="arcticons:expense-register" width="60"></iconify-icon>
+                        <span class="amount" id="expense-amt">$0</span>
+                    </div>
+                    <div class="align" id="balance">
+                        <span class="title">Balance</span>
+                        <iconify-icon icon="bi:currency-dollar" width="55"></iconify-icon>
+                        <span class="amount" id="balance-amt">$0</span>
+                    </div>
+                </div>
+                <div id="container-2-2">
+                    <div id="expense-titles">
+                        <span class="menu-heading">expense title</span>
+                    </div>
+                    <div id="expense-values">
+                        <span class="menu-heading">expense value</span>
+                    </div>
+                    <div id="expense-btns">
+                        <span class="menu-heading">manage expense</span>
+                    </div>                  
+                </div>
+            </div>
+        </div>
+        
+
+        <script src="script.js"></script>
+    </body>
+</html>
